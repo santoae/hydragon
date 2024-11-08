@@ -27,7 +27,8 @@ RUN cd hydragon-node && \
 # Generate secrets & secretManagerConfig
 RUN echo '#!/bin/sh' > /usr/local/bin/startup.sh && \
     echo '/hydragon-node/hydra secrets init --chain-id 8844 --data-dir /hydragon/node-secrets ' >> /usr/local/bin/startup.sh && \
-    echo '/hydragon-node/hydra secrets generate --type encrypted-local --name node --dir /hydragon/secretsManagerConfig.json --extra coingecko-api-key=CG-u1DLVwABupFpcEcYUCz6jZnE' >> /usr/local/bin/startup.sh && \
+    echo 'read -p "Enter your Coingecko api key: " api' >> /usr/local/bin/startup.sh && \
+    echo '/hydragon-node/hydra secrets generate --type encrypted-local --name node --dir /hydragon/secretsManagerConfig.json --extra coingecko-api-key=$api' >> /usr/local/bin/startup.sh && \
     chmod +x /usr/local/bin/startup.sh
 
 CMD ["/usr/local/bin/startup.sh"]
