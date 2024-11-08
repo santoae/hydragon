@@ -5,7 +5,7 @@ FROM ubuntu:latest
 RUN apt-get update && apt-get upgrade -y
 
 # Install git make and wget
-RUN apt-get install git make wget unzip -y
+RUN apt-get install git make wget -y
 
 # Install golang version 1.20
 RUN wget https://go.dev/dl/go1.20.14.linux-arm64.tar.gz && \
@@ -20,4 +20,4 @@ RUN git clone https://github.com/Hydra-Chain/hydragon-node && \
         CGO_ENABLED=0 GOOS=linux GOARCH=arm64 make build
 
 # Set entrypoint to run Hydra server at startup
-CMD ["/hydragon-node/hydra", "server", "--data-dir", "/hydragon/node-secrets", "--chain", "/hydragon/genesis.json", "--grpc-address", ":9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--secrets-config", "/hydragon/secretsManagerConfig.json", "--log-level", "warn"]
+CMD ["/hydragon-node/hydra", "server", "--data-dir", "/hydragon/node-secrets", "--chain", "/hydragon-node/genesis.json", "--grpc-address", ":9632", "--libp2p", "0.0.0.0:1478", "--jsonrpc", "0.0.0.0:8545", "--secrets-config", "/hydragon/secretsManagerConfig.json", "--log-level", "warn"]
