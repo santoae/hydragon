@@ -3,7 +3,7 @@ These repository is for dockerfiles that create and run a node for Hydragon test
 
 Create a node - hydragon-base 
 
-To run the image : docker run -it --name < name > --restart unless-stopped -v $(cd ~/< local directory >&& pwd):/hydragon santoae/hydragon-base
+To run the image : docker run -it --name < name > -v $(cd ~/< local directory >&& pwd):/hydragon santoae/hydragon-base
 --replace < name > and < local directory > for your use case.
 
 After running this container the configurations files will be in out < local directory >
