@@ -1,3 +1,18 @@
+# Hydrachain Hydragon Testnet Docker Files
+
+This repository contains Dockerfiles for creating and running a node for the Hydragon testnet of Hydrachain.
+
+## Docker Images
+
+### 1. Create a Node - `hydragon-base`
+
+To create a Hydragon node, use the `hydragon-base` image.
+
+#### Run the Image
+```bash
+docker run -it --name <name> -v $(cd ~/<local_directory> && pwd):/hydragon santoae/hydragon-base
+
+
 This repository is for dockerfiles that create and run a node for Hydragon testnet of Hydrachain.
 
 
