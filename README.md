@@ -1,4 +1,4 @@
-These repository is for dockerfiles that create and run a node for Hydragon testnet of Hydrachain.
+This repository is for dockerfiles that create and run a node for Hydragon testnet of Hydrachain.
 
 
 Create a node - hydragon-base 
