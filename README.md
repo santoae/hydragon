@@ -14,7 +14,7 @@ docker run -it --name <name> -v $(cd ~/<local_directory> && pwd):/hydragon santo
 After running this container the configurations files will be in < local directory >
 
 ## Run a node 
-To create a Hydragon node, use the `hydragon-node` image.
+To run a Hydragon node, use the `hydragon-node` image.
 
 `
 docker run -it -p 1478:1478 -p 8545:8545 -p 9632:9632 --name < name > --restart unless-stopped -v $(cd ~/< local directory >&& pwd):/hydragon santoae/hydragon-node`
