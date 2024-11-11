@@ -2,10 +2,11 @@
 FROM ubuntu:latest
 
 # Update image with latest
-RUN apt-get update && apt-get upgrade -y
-
-# Install git make and wget
-RUN apt-get install git make wget unzip -y
+RUN apt-get update && apt-get upgrade -y && apt-get install -y \
+        git \
+        make \
+        wget \
+        unzip
 
 # Install golang version 1.20
 RUN wget https://go.dev/dl/go1.20.14.linux-arm64.tar.gz && \
