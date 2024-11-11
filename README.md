@@ -14,3 +14,10 @@ To run the image : docker run -it -p 1478:1478 -p 8545:8545 -p 9632:9632 --name 
 --replace < name > and < local directory > for your use case.
 
 Interactive mode is needed to put the password (for now). Leave the container running with ctrl-p + crtl-q
+
+
+If you need to interact with your node, running the following will open a local session, where you can execute any command:
+docker exec -it $(sudo docker ps|grep "hydragon-node" | awk '{print ($1)}') bash
+
+Check node status:
+docker exec $(sudo docker ps|grep "hydragon-node" | awk '{print ($1)}') hydragon-node/hydra status
