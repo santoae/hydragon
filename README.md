@@ -5,7 +5,6 @@ This repository contains Dockerfiles for creating and running a node for the Hyd
 ## Create a Node 
 To create a Hydragon node, use the `hydragon-base` image.
 
-### Run the Image
 `docker run -it --name <name> -v $(cd ~/<local_directory> && pwd):/hydragon santoae/hydragon-base`
 
 (replace < name > and < local directory > for your use case)
